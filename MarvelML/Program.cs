@@ -63,7 +63,7 @@ namespace MarvelML
                         .Append(mlContext.Transforms.Concatenate("Features", "chaOneEncoded", "chaTwoEncoded"))
                         // </Snippet9>
                         // <Snippet10>
-                        .Append(mlContext.Regression.Trainers.Sdca());
+                        .Append(mlContext.Regression.Trainers.FastTree());
                 // </Snippet10>
 
                 Console.WriteLine("=============== Create and Train the Model ===============");
@@ -110,7 +110,7 @@ namespace MarvelML
             DataTable allChar = getAllChars();
 
 
-            float prdictedYear = 0;
+            string prdictedYear = "0";
             string charOne = "Captain America";
             string charTwo = "Black Widow";
 
@@ -134,17 +134,17 @@ namespace MarvelML
 
                 var prediction = predictionFunction.Predict(sample);
 
-                prdictedYear = Math.Abs(prediction.crossoverYear);
+            prdictedYear = prediction.crossoverYear.ToString().Split(".")[0];
 
-               // charTwo = allChar.Rows[getRandomIndex()]["Column1"].ToString();
 
-              
-           
+
+
+
 
 
 
             Console.WriteLine($"**********************************************************************");
-              Console.WriteLine($"Predicted year: {prdictedYear} " + charOne + " " + charTwo);
+              Console.WriteLine($"Predicted year to crossover between {charOne} and {charTwo} is {prdictedYear}");
              Console.WriteLine($"**********************************************************************");
         }
         private static int getRandomIndex()
