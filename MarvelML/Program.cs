@@ -111,14 +111,15 @@ namespace MarvelML
 
 
             string prdictedYear = "0";
-            string charOne = "Captain America";
-            string charTwo = "Black Widow";
+            string charOne = "Winter Soldier";
+            string charTwo = "Captain America";
 
 
-         
 
 
-               
+
+
+
 
                 var predictionFunction = mlContext.Model.CreatePredictionEngine<Marvel, MarvelPrediction>(model);
 
