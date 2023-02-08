@@ -114,13 +114,6 @@ namespace MarvelML
             string charOne = "Winter Soldier";
             string charTwo = "Captain America";
 
-
-
-
-
-
-
-
                 var predictionFunction = mlContext.Model.CreatePredictionEngine<Marvel, MarvelPrediction>(model);
 
                 var sample = new Marvel()
@@ -136,12 +129,6 @@ namespace MarvelML
                 var prediction = predictionFunction.Predict(sample);
 
             prdictedYear = prediction.crossoverYear.ToString().Split(".")[0];
-
-
-
-
-
-
 
 
             Console.WriteLine($"**********************************************************************");
